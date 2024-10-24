@@ -31,7 +31,7 @@ create table employee(
     insert into employee values(3,'2304020205','Chenzq7','男',20,'123456789012345678','2023-08-24'),(3,'2304020210','Huangce','男',20,'123456789012345678','2023-08-24');
     ```
     此时表结构
-    ![DML表结构01.png](DML表结构01.png)
+    ![DML表结构01.png](../images/DML表结构01.png)
 
 - DML-修改数据
     ```sql
@@ -43,23 +43,23 @@ create table employee(
     update employee set name = 'Chenzq7' where id = 3;
     ```
     此时表结构
-    ![DML表结构02.png](DML表结构02.png)
+    ![DML表结构02.png](../images/DML表结构02.png)
     ```sql
     update employee set name = '我本来就很困', gender = '女' where id = 3; -- 把id=3的数据的name修改为我本来就很困，gender修改为女
     ```
     此时表结构
-    ![DML表结构03.png](DML表结构03.png)
+    ![DML表结构03.png](../images/DML表结构03.png)
     ```sql
     update employee set entryDate = '2023-08-21'; -- 将所有人的enteyDate修改为2023-08-21
     ```
     此时表结构
-    ![DML表结构04.png](DML表结构04.png)
+    ![DML表结构04.png](../images/DML表结构04.png)
 
 - DML-删除数据
     ```sql
     delete from employee where gender = '女';
     ```
     此时表结构
-    ![DML表结构05.png](DML表结构05.png)
+    ![DML表结构05.png](../images/DML表结构05.png)
     
     
