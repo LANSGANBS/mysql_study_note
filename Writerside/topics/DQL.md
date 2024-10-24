@@ -36,3 +36,82 @@ values (1,'1','柳岩','女','20','123456789012345678','北京','2000-01-01'),
 此时表结构如下图所示
 ![DQL表结构01.png](../images/DQL表结构01.png)
 
+- DQL-基本查询
+    1. 查询指定字段name, workno, age并返回
+    ```sql
+    select name,workno,age from emp;
+    ```
+    2. 查询所有字段并返回
+    ```sql
+    select id, workno, name, gender, age, idcard, workaddress, entrydate from emp;
+    select * from emp -- 上述两者作用相同 *为通配符 但是尽量不要写* 因为不直观并且影响效率
+    ```
+    3. 查询所有员工的workaddress，起别名
+    ```sql
+    select workaddress from emp -- 直接查询
+    ```
+    ![DQL表结构02.png](../images/DQL表结构02.png)
+    ```sql
+    select workaddress as '工作地址' from emp; -- 查询后起别名“工作地址”
+    select workaddress '工作地址' from emp; -- as可以省略
+    ```
+    ![DQL表结构03.png](../images/DQL表结构03.png)
+    4. 查询所有员工的workaddress，不要重复
+    ```sql
+    select distinct workaddress '工作地址' from emp; -- distinct关键字用来去除重复记录
+    ```
+    ![DQL表结构04.png](../images/DQL表结构04.png)
+- DQL-条件查询
+    1. 查询年龄等于88的员工
+    ```sql
+    select * from emp where age = 88;
+    ```
+    2. 查询年龄小于20的员工
+    ```sql
+    select * from emp where age < 20;
+    ```
+    3. 查询年龄小于等于20的员工
+    ```sql
+    select * from emp where age <= 20;
+    ```
+    4. 查询没有填写身份证号的员工
+    ```sql
+    select * from emp where idcard is null; -- 不能写idcard = null或者!idcard
+    ```
+    5. 查询所有填写身份证号的员工
+    ```sql
+    select * from emp where idcard is not null;
+    ```
+    6. 查询年龄不等于88的员工
+    ```sql
+    select * from emp where age != 88;
+    select * from emp where age <> 88; -- !=和<>等效
+    ```
+    7. 查询年龄在15（包含）到20（包含）之间的员工
+    ```sql
+    select * from emp where age >= 15 and age <= 20;
+    select * from emp where age >= 15 && age <= 20; -- and和&&等效
+    select * from wmp where age between 15 and 20; -- between左右都包含并且and左边是小的，右边是大的
+    ```
+    8. 查询性别为女且年龄小于25的员工
+    ```sql
+    select * from emp where gender = '女' and age < 25;
+    ```
+    9. 查询年龄等于18或20或40的员工
+    ```sql
+    select * from emp where age = 18 or age = 20 or age = 40;
+    select * from emp where age in(18,20,40);
+    ```
+    10. 查询姓名为2个字的员工
+    ```sql
+    select * from emp where name like '__'; -- _字符为占位符，匹配单个字符，两个_代表两个字符
+    ```
+    11. 查询身份证号最后一位是X的员工
+    ```sql
+    select * from emp where idcard like '%X'; -- %前面是什么无所谓，%匹配任意个字符
+    select * from emp where idcard like '_________________X'; -- 一共17个_代表X前面有17个字符
+    ```
+    12. 查询身份证号中间有789的员工
+    ```sql
+    select * from emp where idcard like '%789%';
+    ```
