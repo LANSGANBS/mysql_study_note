@@ -1,6 +1,9 @@
 # DQL
 
 DQL (Data Query Language) - 数据查询语言：用于查询数据库中数据的语言，主要指的是 SQL 中的 SELECT 语句。
+```sql
+select 字段列表 from 表名列表 where 条件列表 group by 分组字段列表 having 分组后条件列表 order by 排序字段列表 limit 分页参数 
+```
 
 首先删除之前创建的employee 之后创建一个表 语句如下
 ```sql
@@ -216,7 +219,7 @@ values (1,'1','柳岩','女','20','123456789012345678','北京','2000-01-01'),
     ```sql 
     select * from emp limit 10, 10; -- (2-1)*10
     ```
-- 总结
+- 案例练习
     1. 查询年龄为20,21,22,23岁的员工信息。
     ```sql
     select * from emp where age in(20,21,22,23);
@@ -236,4 +239,12 @@ values (1,'1','柳岩','女','20','123456789012345678','北京','2000-01-01'),
     5. 查询性别为男，且年龄在20-40岁（含)以内的前5个员工信息，对查询的结果按年龄升序排序，年龄相同按入职时间升序排序。
     ```sql
     select * from emp where gender = '男' and age between 20 and 40 order by age, entrydate desc limit 5;
+    ```
+  
+- DQL-执行顺序
+    ![DQL执行顺序.png](../images/DQL执行顺序.png)
+    - 查询年龄大于15的员工的姓名、年龄，并根据年龄进行升序排序
+    ```sql
+        select name, age from emp where age > 15 order by age;
+        select e.name ename, e.age eage from emp e where e.age > 15 order by eage;
     ```

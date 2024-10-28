@@ -11,4 +11,5 @@
     <toc-element topic="DML.md"/>
     <toc-element topic="DQL.md"/>
     <toc-element topic="DCL.md"/>
+    <toc-element topic="函数.md"/>
 </instance-profile>
