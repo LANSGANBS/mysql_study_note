@@ -60,6 +60,7 @@ values (1,'1','柳岩','女','20','123456789012345678','北京','2000-01-01'),
     select workaddress '工作地址' from emp; -- as可以省略
     ```
     ![DQL表结构03.png](../images/DQL表结构03.png)
+
     4. 查询所有员工的workaddress，不要重复
     ```sql
     select distinct workaddress '工作地址' from emp; -- distinct关键字用来去除重复记录
