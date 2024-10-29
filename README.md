@@ -1,0 +1,3 @@
+-  note is only for my MySQL database study, the reference book is **"Principles of Computer Composition" by Tang Shuo Fei**, and the reference video is [MySQL](https://www.bilibili.com/video/BV1Kr4y1i7ru?vd_source=d553f4ec7eb91084082ef5bb4c5f72f6).
+
+- All MySQL on this note can be run correctly using DataGrip 2024.2.2 (242.21829.162) on MySQL version 8.0.39 or other software, and the author used Writerside 2024.2 EAP (242.21870.138) in order to write all the .md notes suffixed to .md notes in this repository. All .md notes can be displayed correctly using most software that supports markdown files. If the image is not displayed correctly, it can be found in the note's `../images/` folder.

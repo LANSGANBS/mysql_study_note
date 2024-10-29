@@ -13,4 +13,5 @@
     <toc-element topic="DCL.md"/>
     <toc-element topic="函数.md"/>
     <toc-element topic="约束.md"/>
+    <toc-element topic="多表查询.md"/>
 </instance-profile>
