@@ -7,7 +7,7 @@ DDL (Data Definition Language) - 数据定义语言：用于定义和管理数�
 show tables; -- 查看所有表
 create database mysql_study; -- 创建mysql_study数据库
 use mysql_study; -- 使用mysql_study数据库
-select database; -- 查看当前使用的数据库
+select database(); -- 查看当前使用的数据库
 drop database mysql_study; -- 删除mysql-study数据库
 ```
 2. DDL-表操作
